@@ -1,16 +1,17 @@
-# React + Vite
+# Movies' review Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This is a frontend project built with React and Vite. It allows users to view and submit reviews for movies.
 
-Currently, two official plugins are available:
+**dependencies:**
+- React
+- React Router DOM
+- Bootstrap
+- Bootstrap Icons
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+## Components
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- DefaultLayout: The main layout component that includes the navigation bar and footer.
+- Home: the homepage of the app, contains a banner, a lead paragraph with a welcome message and call to action.
+- MoviesPage: the page that displays a list of movies, each with a title, poster image, and a link to view more details.
+- SingleMoviePage: the page that shows detailed information about a single movie, including its title, poster image, director, genre, year, description, and reviews.
