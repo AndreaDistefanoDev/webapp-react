@@ -1,4 +1,4 @@
-
+import { BrowserRouter, Route, Router, Routes } from "react-router-dom"
 
 function App() {
 
@@ -6,7 +6,14 @@ function App() {
   return (
     <>
 
-      <h1>Hello, World!</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route>
+            <Route path="/" element={<h1>Home</h1>} />
+          </Route>
+        </Routes>
+
+      </BrowserRouter>
 
     </>
   )
