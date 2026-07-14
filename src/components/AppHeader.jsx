@@ -1,4 +1,25 @@
+import { NavLink } from "react-router-dom"
+
+
 export default function AppHeader() {
+
+    const menu = [
+        {
+            id: 1,
+            label: "Movies",
+            path: "/movies"
+        },
+        {
+            id: 2,
+            label: "About",
+            path: "/about"
+        },
+        {
+            id: 3,
+            label: "Contact",
+            path: "/contact"
+        }
+    ]
 
     return (
         <header>
@@ -17,19 +38,17 @@ export default function AppHeader() {
                     </button>
                     <div className="collapse navbar-collapse" id="collapsibleNavId">
                         <ul className="navbar-nav me-auto mt-2 mt-lg-0">
-                            <li className="nav-item">
-                                <a className="nav-link active" href="#" aria-current="page">Home
-                                    <span className="visually-hidden">(current)</span></a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Movies</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">About</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Contact</a>
-                            </li>
+                            {menu.map((item => {
+                                return (
+                                    <li key={item.id} className="nav-item">
+                                        <NavLink className="nav-link active" to={item.path}>{item.label}</NavLink>
+                                        <span className="visually-hidden">(current)</span>
+                                    </li>
+
+                                )
+                            }))
+                            }
+
 
                         </ul>
                         <form className="d-flex my-2 my-lg-0">
@@ -49,7 +68,7 @@ export default function AppHeader() {
                 </div>
             </nav>
 
-        </header>
+        </header >
 
     )
 }
