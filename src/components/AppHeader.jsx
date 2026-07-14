@@ -6,16 +6,22 @@ export default function AppHeader() {
     const menu = [
         {
             id: 1,
-            label: "Movies",
-            path: "/movies"
+            label: "Home",
+            path: "/"
         },
         {
             id: 2,
+            label: "Movies",
+            path: "/movies"
+        },
+
+        {
+            id: 3,
             label: "About",
             path: "/about"
         },
         {
-            id: 3,
+            id: 4,
             label: "Contact",
             path: "/contact"
         }
