@@ -39,7 +39,7 @@ export default function SingleMovie() {
                     </div>
                 </div>
             </section>
-            <AddReview />
+            <AddReview url={url} />
             <ReviewList reviews={movie ? movie.reviews : []} />
 
         </>
