@@ -70,6 +70,7 @@ export default function AppHeader() {
                                 Search
                             </button>
                         </form>
+                        <NavLink className="btn btn-outline-success" to="/admin">Admin</NavLink>
                     </div>
                 </div>
             </nav>

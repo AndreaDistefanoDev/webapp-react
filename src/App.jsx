@@ -5,6 +5,8 @@ import Movies from "./pages/Movies"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
 import SingleMovie from "./pages/SingleMovie"
+import AdminLayout from "./layouts/AdminLayout"
+
 function App() {
 
 
@@ -20,6 +22,10 @@ function App() {
               <Route path="/movies/:id" element={<SingleMovie />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+            </Route>
+            <Route element={<AdminLayout />} >
+              <Route path="/admin" element={<h1>Admin Dashboard</h1>} />
+              <Route path="/admin/movies/create" element={<h1>Admin Create Movie</h1>} />
             </Route>
           </Route>
         </Routes>
