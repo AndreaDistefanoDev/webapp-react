@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import { Link } from "react-router-dom";
 export default function Movies() {
 
     const [movies, setMovies] = useState([])
@@ -41,7 +41,7 @@ export default function Movies() {
                                         <div className="card-body">
                                             <h5 className="card-title">{movie.title}</h5>
                                             <p className="text-card">{movie.abstract}</p>
-                                            <a href="#" className="btn btn-primary">Scopri di più</a>
+                                            <Link to={`/movies/${movie.id}`} className="btn btn-primary">Scopri di più </Link>
 
                                         </div>
                                     </div>
