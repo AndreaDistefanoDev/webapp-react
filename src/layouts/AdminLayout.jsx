@@ -10,7 +10,7 @@ export default function AdminLayout() {
 
                 <div className="row">
 
-                    <aside className="card col-12 col-md-3 d-flex flex-column justify-content-between p-3 bg-dark">
+                    <aside className="card col-12 col-md-3 d-flex flex-column justify-content-between p-3 bg-dark text-white">
                         <div className="top">
                             <h4 className="text-white py-3">Admin Menu</h4>
 
@@ -23,7 +23,7 @@ export default function AdminLayout() {
                         </div>
 
                         <div>
-                            <Link to="/books" className="btn btn-outline-primary d-block my-3">
+                            <Link to="/movies" className="btn btn-outline-primary d-block my-3">
                                 <i className="bi bi-book-fill"></i>
                                 Library
                             </Link>

@@ -1,6 +1,22 @@
 import { Link } from "react-router-dom"
+import { useState, useEffect, use } from "react"
 
 export default function Dashboard() {
+
+    const [movies, setMovies] = useState([])
+    const url = "http://localhost:3000/movies"
+
+    function fetchMovies(url) {
+        fetch(url)
+            .then(response => response.json())
+            .then(data => setMovies(data))
+            .catch(error => console.error(error));
+    }
+
+    useEffect(() => {
+        fetchMovies(url)
+    }, []);
+
     return (
         <>
             <div className="container-fluid bg-light py-2">
@@ -39,17 +55,23 @@ export default function Dashboard() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>The Matrix</td>
-                                <td>The Wachowskis</td>
-                                <td>1999</td>
-                                <td>Action</td>
-                                <td>
-                                    <button className="btn btn-sm btn-success me-2"> Edit</button>
-                                    <button className="btn btn-sm btn-danger"> Delete</button>
-                                </td>
-                            </tr >
+
+                            {movies.map((movie) => {
+                                return (
+                                    <tr key={movie.id}>
+                                        <th scope="row">{movie.id}</th>
+                                        <td>{movie.title}</td>
+                                        <td>{movie.director}</td>
+                                        <td>{movie.release_year}</td>
+                                        <td>{movie.genre}</td>
+                                        <td>
+                                            <button className="btn btn-sm btn-success me-2"><i className="bi bi-eye"></i></button>
+                                            <button className="btn btn-sm btn-success me-2"> <i className="bi bi-pencil-square"></i></button>
+                                            <button className="btn btn-sm btn-danger"> <i className="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                )
+                            })}
                         </tbody>
                     </table>
                 </div>
